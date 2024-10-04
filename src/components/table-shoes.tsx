@@ -28,8 +28,6 @@ export default function TableShoes({ userId }: { userId: string }) {
     queryFn: async () => await fetchShoesByUser(userId),
   });
 
-  if (isError) return <div>Sorry There was an Error</div>;
-
   return (
     <Card>
       <CardHeader className="flex flex-row justify-between items-center px-7">
@@ -88,6 +86,11 @@ export default function TableShoes({ userId }: { userId: string }) {
                   </TableCell>
                 </TableRow>
               ))
+            ) : //Mock api tidak mengirimkan array kosong, tetapi menggunakan error "Not found"
+            isError ? (
+              <TableRow>
+                <TableCell colSpan={5}>Empty shoe</TableCell>
+              </TableRow>
             ) : (
               <TableRow>
                 <TableCell colSpan={5}>Empty shoe</TableCell>
