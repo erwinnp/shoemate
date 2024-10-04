@@ -5,12 +5,13 @@
 3. Set env
 4. Install depedencies
 
-````bash
+```bash
 npm install
 # or
 yarn
 # or
 pnpm install
+```
 
 6. Jalankan local:
 
@@ -20,4 +21,4 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-````
+```
